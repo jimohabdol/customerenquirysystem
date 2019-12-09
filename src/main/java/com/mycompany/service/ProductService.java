@@ -5,7 +5,7 @@ import java.util.List;
 import com.mycompany.model.Product;
 
 public interface ProductService {
-	public Product addUser(Product product);
+	public Product addProduct(Product product);
 	
 	public Product updateProduct(Product product);
 	

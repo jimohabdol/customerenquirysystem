@@ -1,22 +1,42 @@
 package com.mycompany.serviceImplementation;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.mycompany.model.Employee;
+import com.mycompany.repository.EmploeeRepository;
 import com.mycompany.service.EmployeeService;
 
 public class EmployeeServiceImplemation implements EmployeeService {
 
+	@Autowired
+	private EmploeeRepository empRepo;
 	@Override
 	public Employee addEmployee(Employee emp) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee em = null;
+		try {
+			if (emp!=null) {
+				em = empRepo.save(emp);
+			}
+		} catch (Exception e) {
+			System.out.println("Error saving employee: "+ e.getMessage());
+		}
+		return em;
 	}
 
 	@Override
 	public Employee updateEmployee(Employee emp) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee em = null;
+		try {
+			if(emp != null) {
+				em=empRepo.save(emp);
+			}
+		} catch (Exception e) {
+			System.out.println("Error updating employee: "+ e.getMessage());
+		}
+		return em;
 	}
 
 	@Override
@@ -39,14 +59,18 @@ public class EmployeeServiceImplemation implements EmployeeService {
 
 	@Override
 	public void deleteEmployeeById(long EmpId) {
-		// TODO Auto-generated method stub
-
+		empRepo.deleteById(EmpId);
 	}
 
 	@Override
 	public List<Employee> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Employee> allEmp = new ArrayList<Employee>();
+		try {
+			allEmp = empRepo.findAll();
+		} catch (Exception e) {
+			System.out.println("Error get all employees: "+ e.getMessage());
+		}
+		return allEmp;
 	}
 
 }

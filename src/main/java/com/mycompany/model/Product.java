@@ -20,7 +20,6 @@ public class Product {
 	private ProductCategory productCategory;
 	
 	public Product(String productName, String productDescription, ProductCategory productCategory) {
-		super();
 		this.productName = productName;
 		this.productDescription = productDescription;
 		this.productCategory = productCategory;
