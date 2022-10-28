@@ -6,7 +6,7 @@ pipeline {
             steps {
                 
                  script {
-                    if (env.GIT_BRANCH == 'master') {
+                    if (env.GIT_BRANCH.split("/")[1] == 'master') {
                         echo 'I only execute on the test A branch'
                     } else {
                         echo env.BRANCH_NAME
