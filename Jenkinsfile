@@ -12,7 +12,7 @@ pipeline {
                         echo env.BRANCH_NAME
                     }
                 }
-                echo "$GIT_BRANCH" + env.branch
+                echo "${GIT_BRANCH.split("/")[1]}"
             }
 
         }       
