@@ -15,8 +15,6 @@ pipeline {
                 }
                 echo "${GIT_BRANCH.split("/")[1]}"
             }
-
         }       
     }
-
 }
