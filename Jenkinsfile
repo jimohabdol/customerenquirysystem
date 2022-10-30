@@ -1,7 +1,4 @@
 pipeline {
-    when {
-                branch 'master' || branch 'TundeBranch'
-            }
     agent any
 
     stages {
