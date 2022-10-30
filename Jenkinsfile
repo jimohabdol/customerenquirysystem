@@ -25,11 +25,21 @@ pipeline {
             }
         }   
         stage('deploy') {
+            when {
+                expression {
+                env.GIT_BRANCH.split("/")[1] == 'master' || env.GIT_BRANCH.split("/")[1] == 'TundeBranch'
+                }
+            }
             steps {
                 echo 'I only deployed on the' + env.GIT_BRANCH.split("/")[1] + 'branch and' + "${build_env}"
             }
         } 
         stage('build') {
+            when {
+                expression {
+                env.GIT_BRANCH.split("/")[1] == 'master' || env.GIT_BRANCH.split("/")[1] == 'TundeBranch'
+                }
+            }
             steps {
                 echo 'I only build from ' + env.GIT_BRANCH.split("/")[1] + 'branch and' + "${build_env}"
             }
