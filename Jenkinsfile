@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Verify branch') {
             when {
-                branch 'TundeBranch'
+                branch 'master'
             }
             steps {
                  script {
