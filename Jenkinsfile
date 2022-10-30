@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        #APP_NAME = 'rug-visualizer'
+        APP_NAME = ''
         build_env = envBuild(env.GIT_BRANCH.split("/")[1])
     }
     stages {
