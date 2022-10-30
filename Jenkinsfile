@@ -1,15 +1,16 @@
 pipeline {
     agent any
-
     stages {
         stage('Verify branch') {
+            when {
+                branch 'TundeBranch'
+            }
             steps {
-                
                  script {
                     if (env.GIT_BRANCH.split("/")[1] == 'master') {
-                        echo 'I only execute on the test A branch'
+                        echo 'I only execute on the' + env.GIT_BRANCH.split("/")[1] + 'branch'
                     } else {
-                        echo env.BRANCH_NAME
+                        echo 'I only execute on the' + env.GIT_BRANCH.split("/")[1] + 'branch'
                     }
                 }
                 echo "${GIT_BRANCH.split("/")[1]}"
