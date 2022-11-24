@@ -8,7 +8,7 @@ pipeline {
         stage('Verify branch') {
             when {
                 expression {
-                env.GIT_BRANCH.split("/")[1] == 'master' || env.GIT_BRANCH.split("/")[1] == 'TundeBranch'
+                env.GIT_BRANCH.split("/")[1] == 'feature' || env.GIT_BRANCH.split("/")[1] == 'TundeBranch'
                 }
             }
             steps {
