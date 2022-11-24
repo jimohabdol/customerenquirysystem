@@ -45,7 +45,7 @@ def envBuild(branch) {
         buildEnv = 'dev'
     }
     if (branch == 'TundeBranch') {
-        buildEnv = 'staging'
+        buildEnv = 'stag'
     }
 
     return buildEnv
