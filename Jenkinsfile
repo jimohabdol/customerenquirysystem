@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'master' }
     environment {
         APP_NAME = ''
         build_env = envBuild(env.GIT_BRANCH.split("/")[1])
